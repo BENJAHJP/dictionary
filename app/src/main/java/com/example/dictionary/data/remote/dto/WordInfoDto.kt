@@ -1,5 +1,6 @@
 package com.example.dictionary.data.remote.dto
 
+import com.example.dictionary.data.local.entity.WordInfoEntity
 import com.example.dictionary.domain.model.WordInfo
 
 data class WordInfoDto(
@@ -10,9 +11,8 @@ data class WordInfoDto(
     val sourceUrls: List<String>,
     val word: String
 ){
-    fun toWordInfo(): WordInfo {
-        return WordInfo(
-            license = license,
+    fun toWordInfoEntity(): WordInfoEntity {
+        return WordInfoEntity(
             meanings = meanings.map { it.toMeaning() },
             phonetic = phonetic,
             word = word
