@@ -11,7 +11,7 @@ data class MeaningDto(
     fun toMeaning(): Meaning {
         return Meaning(
             antonyms = antonyms,
-            definitions = definitions,
+            definitions = definitions.map { it.toDefinition() },
             partOfSpeech = partOfSpeech,
             synonyms = synonyms
         )
