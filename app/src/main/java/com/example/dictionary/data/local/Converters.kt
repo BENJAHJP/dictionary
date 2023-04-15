@@ -1,9 +1,11 @@
 package com.example.dictionary.data.local
 
+import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
 import com.example.dictionary.domain.model.Meaning
 import com.google.gson.reflect.TypeToken
 
+@ProvidedTypeConverter
 class Converters(
     private val jsonParser: JsonParser
 ) {
