@@ -1,4 +1,4 @@
-package com.example.dictionary.ui.theme
+package com.example.dictionary.presentation.theme
 
 import android.app.Activity
 import android.os.Build
