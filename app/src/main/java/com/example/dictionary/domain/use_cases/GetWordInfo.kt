@@ -5,8 +5,9 @@ import com.example.dictionary.domain.model.WordInfo
 import com.example.dictionary.domain.repository.WordInfoRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class GetWordInfo(
+class GetWordInfo @Inject constructor(
     private val repository: WordInfoRepository
 ) {
     operator fun invoke(word: String): Flow<Resource<List<WordInfo>>>{
