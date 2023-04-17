@@ -50,6 +50,4 @@ object AppModule {
     fun provideWordInfoRepository(wordInfoDatabase: WordInfoDatabase,api: DictionaryApi): WordInfoRepository {
         return WordInfoRepositoryImpl(api, wordInfoDatabase.dao)
     }
-
-
 }
