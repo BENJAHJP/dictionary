@@ -5,12 +5,10 @@ import androidx.room.Room
 import com.example.dictionary.common.Constants
 import com.example.dictionary.data.local.Converters
 import com.example.dictionary.data.local.GsonParser
-import com.example.dictionary.data.local.WordInfoDao
 import com.example.dictionary.data.local.database.WordInfoDatabase
 import com.example.dictionary.data.remote.api.DictionaryApi
 import com.example.dictionary.data.remote.repository.WordInfoRepositoryImpl
 import com.example.dictionary.domain.repository.WordInfoRepository
-import com.example.dictionary.domain.use_cases.GetWordInfo
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -18,7 +16,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
 
 @Module

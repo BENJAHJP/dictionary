@@ -66,8 +66,12 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
 
-    //hilt dependency injection
+    // Compose dependencies
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0-alpha02"
+    implementation "androidx.navigation:navigation-compose:2.6.0-alpha01"
     implementation "androidx.hilt:hilt-navigation-compose:1.0.0"
+
+    //hilt dependency injection
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "androidx.hilt:hilt-compiler:1.0.0"
     kapt "com.google.dagger:hilt-compiler:2.44"
