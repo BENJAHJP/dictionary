@@ -53,7 +53,7 @@ class MainScreenViewModel @Inject constructor(
                             wordInfoItems = result.data ?: emptyList(),
                             isLoading = false
                         )
-                        _uiEvent.emit(UiEvent.ShowSnackBar(
+                        _uiEvent.emit(UiEvent.ShowToast(
                             result.message ?: "Unknown error"
                         ))
                     }
