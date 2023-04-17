@@ -10,6 +10,7 @@ import com.example.dictionary.data.local.database.WordInfoDatabase
 import com.example.dictionary.data.remote.api.DictionaryApi
 import com.example.dictionary.data.remote.repository.WordInfoRepositoryImpl
 import com.example.dictionary.domain.repository.WordInfoRepository
+import com.example.dictionary.domain.use_cases.GetWordInfo
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -50,5 +51,11 @@ object AppModule {
     @Singleton
     fun provideWordInfoRepository(dao: WordInfoDao, api: DictionaryApi): WordInfoRepository {
         return WordInfoRepositoryImpl(api, dao)
+    }
+
+    @Provides
+    @Singleton
+    fun provideWordInfoUseCase(repository: WordInfoRepository): GetWordInfo {
+        return GetWordInfo(repository)
     }
 }
