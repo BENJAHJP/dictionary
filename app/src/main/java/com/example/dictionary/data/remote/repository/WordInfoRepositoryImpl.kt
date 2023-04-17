@@ -9,8 +9,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
-class WordInfoRepositoryImpl(
+class WordInfoRepositoryImpl @Inject constructor(
     private val api: DictionaryApi,
     private val dao:WordInfoDao
 ): WordInfoRepository {

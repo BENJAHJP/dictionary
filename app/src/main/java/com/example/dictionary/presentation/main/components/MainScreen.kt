@@ -22,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.dictionary.presentation.main.MainScreenViewModel
 import com.example.dictionary.presentation.uievent.UiEvent
 import kotlinx.coroutines.flow.collectLatest
@@ -30,7 +31,7 @@ import kotlinx.coroutines.flow.collectLatest
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun MainScreen(
-    viewModel: MainScreenViewModel
+    viewModel: MainScreenViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
     val context = LocalContext.current

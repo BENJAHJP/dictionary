@@ -24,7 +24,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-
     @Provides
     @Singleton
     fun provideDictionaryApi(): DictionaryApi {
@@ -46,16 +45,11 @@ object AppModule {
             .addTypeConverter(Converters(GsonParser(Gson())))
             .build()
     }
-
     @Provides
     @Singleton
-    fun provideWordInfoRepository(dao: WordInfoDao, api: DictionaryApi): WordInfoRepository {
-        return WordInfoRepositoryImpl(api, dao)
+    fun provideWordInfoRepository(wordInfoDatabase: WordInfoDatabase,api: DictionaryApi): WordInfoRepository {
+        return WordInfoRepositoryImpl(api, wordInfoDatabase.dao)
     }
 
-    @Provides
-    @Singleton
-    fun provideWordInfoUseCase(repository: WordInfoRepository): GetWordInfo {
-        return GetWordInfo(repository)
-    }
+
 }
