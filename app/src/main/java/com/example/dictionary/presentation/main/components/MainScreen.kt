@@ -74,7 +74,7 @@ fun MainScreen(
                         if (i > 0){
                             Spacer(modifier = Modifier.height(8.dp))
                         }
-
+                        WordInfoItem(wordInfo = wordInfo)
                         if (i < state.wordInfoItems.size - 1){
                             Divider()
                         }

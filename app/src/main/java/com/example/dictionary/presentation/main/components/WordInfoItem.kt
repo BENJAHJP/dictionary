@@ -26,7 +26,14 @@ fun WordInfoItem(
         Spacer(modifier = Modifier.height(16.dp))
         wordInfo.meanings.forEach { meaning ->
             Text(text = meaning.partOfSpeech, fontWeight = FontWeight.Bold)
-
+            meaning.definitions.forEachIndexed { i, definition ->
+                Text(text = "${i + 1}. ${definition.definition}")
+                Spacer(modifier = Modifier.height(8.dp))
+                definition.example?.let { example ->
+                    Text(text = "Example: $example")
+                }
+                Spacer(modifier = Modifier.height(8.dp))
+            }
         }
     }
 }
