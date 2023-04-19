@@ -11,5 +11,4 @@ interface DictionaryApi {
         @Path("word") word: String
     ): List<WordInfoDto>
 
-
 }

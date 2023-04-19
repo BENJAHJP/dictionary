@@ -1,5 +1,6 @@
 package com.example.dictionary.data.remote.repository
 
+import android.util.Log
 import com.example.dictionary.common.Resource
 import com.example.dictionary.data.local.WordInfoDao
 import com.example.dictionary.data.remote.api.DictionaryApi
