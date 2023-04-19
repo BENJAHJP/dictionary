@@ -6,6 +6,6 @@ import com.example.dictionary.data.remote.dto.PhoneticDto
 
 data class WordInfo(
     val meanings: List<Meaning>,
-    val phonetic: String,
+    val phonetic: String? = null,
     val word: String
 )
