@@ -17,14 +17,16 @@ fun WordInfoItem(
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier) {
-        Text(
-            text = wordInfo.word,
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold
-        )
-        Text(text = wordInfo.phonetic, fontWeight = FontWeight.Light)
+        wordInfo.word?.let {
+            Text(
+                text = it,
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
+        wordInfo.phonetic?.let { Text(text = it, fontWeight = FontWeight.Light) }
         Spacer(modifier = Modifier.height(16.dp))
-        wordInfo.meanings.forEach { meaning ->
+        wordInfo.meanings?.forEach { meaning ->
             Text(text = meaning.partOfSpeech, fontWeight = FontWeight.Bold)
             meaning.definitions.forEachIndexed { i, definition ->
                 Text(text = "${i + 1}. ${definition.definition}")

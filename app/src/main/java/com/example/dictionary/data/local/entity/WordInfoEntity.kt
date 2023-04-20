@@ -9,7 +9,7 @@ import com.example.dictionary.domain.model.WordInfo
 data class WordInfoEntity(
     val word: String,
     val phonetic : String? = null,
-    val meanings: List<Meaning>,
+    val meanings: List<Meaning>?,
     @PrimaryKey val id: Int? = null
 ){
     fun toWordInfo(): WordInfo {

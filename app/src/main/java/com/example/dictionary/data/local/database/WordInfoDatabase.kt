@@ -9,7 +9,7 @@ import com.example.dictionary.data.local.entity.WordInfoEntity
 
 @Database(
     entities = [WordInfoEntity::class],
-    version = 1
+    version = 2
 )
 @TypeConverters(Converters::class)
 abstract class WordInfoDatabase: RoomDatabase() {
