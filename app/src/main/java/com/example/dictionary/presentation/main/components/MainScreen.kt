@@ -2,6 +2,7 @@ package com.example.dictionary.presentation.main.components
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -62,7 +63,7 @@ fun MainScreen(
                     modifier = Modifier.align(Alignment.Center)
                 )
             } else {
-                LazyColumn(){
+                LazyColumn(modifier = Modifier.padding(top = it.calculateTopPadding())){
                     items(state.words){ word ->
                         SingleRow(
                             wordInfo = word,
