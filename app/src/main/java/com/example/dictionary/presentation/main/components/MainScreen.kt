@@ -66,6 +66,8 @@ fun MainScreen(
                     items(state.words){ word ->
                         SingleRow(
                             wordInfo = word,
+                            isExpanded = viewModel.isExpanded,
+                            onExpand = { viewModel.isExpanded = it}
                         )
                     }
                 }

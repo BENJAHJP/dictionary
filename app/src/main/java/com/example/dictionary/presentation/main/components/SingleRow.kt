@@ -1,5 +1,6 @@
 package com.example.dictionary.presentation.main.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,13 +19,15 @@ import com.example.dictionary.domain.model.WordInfo
 
 @Composable
 fun SingleRow(
-    isExpanded: Boolean = false,
+    isExpanded: Boolean,
+    onExpand: (Boolean) -> Unit,
     wordInfo: WordInfo,
 ) {
     OutlinedCard(
         modifier = Modifier.fillMaxWidth()
             .padding(10.dp)
             .height(50.dp)
+            .clickable { onExpand(true) }
         ,
         shape = RoundedCornerShape(10.dp)
     ) {

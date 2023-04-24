@@ -1,7 +1,9 @@
 package com.example.dictionary.presentation.main
 
 import androidx.compose.runtime.State
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.dictionary.common.Resource
@@ -19,6 +21,7 @@ import javax.inject.Inject
 class MainScreenViewModel @Inject constructor(
     private val getAllCachedWordInfos: GetAllCachedWordInfos
 ): ViewModel() {
+    var isExpanded by mutableStateOf(false)
 
     private val _uiEvents = MutableSharedFlow<UiEvent>()
     val uiEvents: MutableSharedFlow<UiEvent> = _uiEvents
