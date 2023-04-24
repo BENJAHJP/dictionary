@@ -27,7 +27,6 @@ import com.example.dictionary.presentation.main.MainScreenViewModel
 import com.example.dictionary.presentation.uievent.UiEvent
 import kotlinx.coroutines.flow.collectLatest
 
-@OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun MainScreen(
