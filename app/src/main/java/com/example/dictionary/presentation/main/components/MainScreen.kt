@@ -66,7 +66,6 @@ fun MainScreen(
                     items(state.words){ word ->
                         SingleRow(
                             wordInfo = word,
-
                         )
                     }
                 }

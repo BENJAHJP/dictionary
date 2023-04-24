@@ -3,6 +3,9 @@ package com.example.dictionary.presentation.main.components
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CardElevation
+import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -13,9 +16,12 @@ import com.example.dictionary.domain.model.WordInfo
 
 @Composable
 fun SingleRow(
+    isExpanded: Boolean = false,
     wordInfo: WordInfo,
 ) {
-    Column() {
+    OutlinedCard(
+        shape = RoundedCornerShape(10.dp)
+    ) {
         wordInfo.word?.let {
             Text(
                 text = it,
@@ -23,17 +29,19 @@ fun SingleRow(
                 fontWeight = FontWeight.Bold
             )
         }
-        wordInfo.phonetic?.let { Text(text = it, fontWeight = FontWeight.Light) }
-        Spacer(modifier = Modifier.height(16.dp))
-        wordInfo.meanings?.forEach { meaning ->
-            Text(text = meaning.partOfSpeech, fontWeight = FontWeight.Bold)
-            meaning.definitions.forEachIndexed { i, definition ->
-                Text(text = "${i + 1}. ${definition.definition}")
-                Spacer(modifier = Modifier.height(8.dp))
-                definition.example?.let { example ->
-                    Text(text = "Example: $example")
+        if (isExpanded){
+            wordInfo.phonetic?.let { Text(text = it, fontWeight = FontWeight.Light) }
+            Spacer(modifier = Modifier.height(16.dp))
+            wordInfo.meanings?.forEach { meaning ->
+                Text(text = meaning.partOfSpeech, fontWeight = FontWeight.Bold)
+                meaning.definitions.forEachIndexed { i, definition ->
+                    Text(text = "${i + 1}. ${definition.definition}")
+                    Spacer(modifier = Modifier.height(8.dp))
+                    definition.example?.let { example ->
+                        Text(text = "Example: $example")
+                    }
+                    Spacer(modifier = Modifier.height(8.dp))
                 }
-                Spacer(modifier = Modifier.height(8.dp))
             }
         }
     }
