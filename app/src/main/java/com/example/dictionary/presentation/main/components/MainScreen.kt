@@ -25,8 +25,10 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.dictionary.R
 import com.example.dictionary.SpeechRecognizer
 import com.example.dictionary.presentation.main.MainScreenEvents
 import com.example.dictionary.presentation.main.MainScreenViewModel
@@ -97,7 +99,7 @@ fun MainScreen(
                             }
                         }) {
                             androidx.compose.material3.Icon(
-                                imageVector = Icons.Rounded.Call,
+                                painter = painterResource(id = R.drawable.mic),
                                 contentDescription = "speech recognition")
                         }
                     }
