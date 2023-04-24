@@ -26,7 +26,6 @@ fun SingleRow(
     OutlinedCard(
         modifier = Modifier.fillMaxWidth()
             .padding(10.dp)
-            .height(50.dp)
             .clickable { onExpand(true) }
         ,
         shape = RoundedCornerShape(10.dp)
