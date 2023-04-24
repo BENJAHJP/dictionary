@@ -34,4 +34,14 @@ class WordInfoRepositoryImpl @Inject constructor(
         val newWordInfos = dao.getWordInfos(word).map { it.toWordInfo() }
         emit(Resource.Success(newWordInfos))
     }
+
+    override fun getCachedWords(): Flow<Resource<List<WordInfo>>> = flow{
+        try {
+            emit(Resource.Loading())
+            val wordInfos = dao.getAllWordInfos().map { it.toWordInfo() }
+            emit(Resource.Success(wordInfos))
+        } catch (e: IOException){
+            emit(Resource.Error(e.localizedMessage))
+        }
+    }
 }

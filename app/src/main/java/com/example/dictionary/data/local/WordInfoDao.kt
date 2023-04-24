@@ -6,9 +6,13 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.dictionary.data.local.entity.WordInfoEntity
 import com.example.dictionary.domain.model.WordInfo
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface WordInfoDao {
+
+    @Query("SELECT * FROM wordinfoentity")
+    suspend fun getAllWordInfos(): List<WordInfoEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertWordInfos(wordInfos: List<WordInfoEntity>)

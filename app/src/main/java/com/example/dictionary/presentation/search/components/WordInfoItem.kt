@@ -1,4 +1,4 @@
-package com.example.dictionary.presentation.main.components
+package com.example.dictionary.presentation.search.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -16,7 +16,9 @@ fun WordInfoItem(
     wordInfo: WordInfo,
     modifier: Modifier = Modifier
 ) {
-    Column(modifier = modifier) {
+    Column(
+        modifier = modifier
+    ) {
         wordInfo.word?.let {
             Text(
                 text = it,

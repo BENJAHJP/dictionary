@@ -1,4 +1,4 @@
-package com.example.dictionary.presentation.main
+package com.example.dictionary.presentation.search
 
 import com.example.dictionary.domain.model.WordInfo
 
