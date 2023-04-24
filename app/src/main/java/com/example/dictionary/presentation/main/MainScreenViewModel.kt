@@ -65,4 +65,12 @@ class MainScreenViewModel @Inject constructor(
             }.launchIn(this)
         }
     }
+
+    fun onEvent(mainScreenEvents: MainScreenEvents){
+        when(mainScreenEvents){
+            is MainScreenEvents.OnSearchTextChanged -> {
+                _searchQuery.value = mainScreenEvents.searchQuery
+            }
+        }
+    }
 }
