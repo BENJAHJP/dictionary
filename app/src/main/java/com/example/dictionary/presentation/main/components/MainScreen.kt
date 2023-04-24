@@ -49,7 +49,10 @@ fun MainScreen(
     val speechRecognizer = rememberLauncherForActivityResult(
         contract = SpeechRecognizer(),
         onResult = {
-            viewModel.onEvent(MainScreenEvents.OnSearchTextChanged(it.toString().trim('[')))
+            viewModel.onEvent(
+                MainScreenEvents.OnSearchTextChanged(it.toString()
+                    .removePrefix("[")
+                    .removeSuffix("]")))
         }
     )
     LaunchedEffect(key1 = true){
