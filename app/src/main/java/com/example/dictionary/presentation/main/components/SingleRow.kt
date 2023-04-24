@@ -2,7 +2,9 @@ package com.example.dictionary.presentation.main.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CardElevation
 import androidx.compose.material3.OutlinedCard
@@ -20,6 +22,10 @@ fun SingleRow(
     wordInfo: WordInfo,
 ) {
     OutlinedCard(
+        modifier = Modifier.fillMaxWidth()
+            .padding(10.dp)
+            .height(50.dp)
+        ,
         shape = RoundedCornerShape(10.dp)
     ) {
         wordInfo.word?.let {
