@@ -38,7 +38,7 @@ import kotlinx.coroutines.flow.collectLatest
 @OptIn(ExperimentalPermissionsApi::class, ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MainScreen(
+fun SearchScreen(
     viewModel: SearchScreenViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value

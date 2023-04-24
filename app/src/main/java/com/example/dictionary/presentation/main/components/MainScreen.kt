@@ -64,7 +64,10 @@ fun MainScreen(
             } else {
                 LazyColumn(){
                     items(state.words){ word ->
-                        SingleRow(wordInfo = word)
+                        SingleRow(
+                            wordInfo = word,
+
+                        )
                     }
                 }
             }

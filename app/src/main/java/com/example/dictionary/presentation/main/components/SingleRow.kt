@@ -14,9 +14,8 @@ import com.example.dictionary.domain.model.WordInfo
 @Composable
 fun SingleRow(
     wordInfo: WordInfo,
-    modifier: Modifier = Modifier
 ) {
-    Column(modifier = modifier) {
+    Column() {
         wordInfo.word?.let {
             Text(
                 text = it,
